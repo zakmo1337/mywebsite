@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zakaria Mowafek - Portfolio</title>
+    <title>Zakaria Mowafek - Portfolio 🚀</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-            max-width: 800px;
-            margin: 40px auto;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 50px auto;
             padding: 0 20px;
-            color: #000;
+            color: #333;
+            display: flex;
         }
 
         h1 {
-            font-size: 1.2rem;
-            font-weight: normal;
-            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
 
         .bio {
             max-width: 600px;
-            margin-bottom: 3rem;
+            margin-right: 3rem;
+        }
+
+        .bio p {
+            margin-bottom: 1.5rem;
         }
 
         .content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
         }
 
         .section {
@@ -36,7 +42,8 @@
         }
 
         .section-title {
-            font-size: 0.9rem;
+            font-size: 1.1rem;
+            font-weight: 500;
             margin-bottom: 1rem;
         }
 
@@ -44,13 +51,17 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: #000;
-            margin-bottom: 0.5rem;
+            color: #333;
+            margin-bottom: 0.8rem;
+        }
+
+        .links a:hover, .timeline-item:hover {
+            color: #2e86de;
         }
 
         .arrow {
             margin-left: 0.5rem;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 
         .timeline-item {
@@ -62,13 +73,14 @@
             font-size: 0.9rem;
         }
 
-        .coming-soon {
-            margin-top: 4rem;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .bio {
+                margin-right: 0;
+                margin-bottom: 3rem;
+            }
             .content {
                 grid-template-columns: 1fr;
             }
@@ -76,54 +88,44 @@
     </style>
 </head>
 <body>
-    <h1>Zakaria Mowafek</h1>
-
-  <div class="bio">
-    <p>As a Business Informatics student at FH Frankfurt, I bring a solid combination of software development, system analysis, and business expertise to solve real-world challenges. My technical skillset includes full-stack development with languages and frameworks such as <strong>Java, Python, C#, and JavaScript</strong> (React, Node.js). I have experience in developing user-friendly applications, implementing object-oriented programming (OOP) concepts, and designing scalable RESTful APIs. Additionally, I work with <strong>SQL</strong> for data management and optimization.</p>
-    
-    <p>Beyond software development, I am deeply passionate about <strong>cybersecurity</strong> and network analysis. Using tools like <strong>Kali Linux</strong>, <strong>Wireshark</strong>, and penetration testing techniques, I ensure systems are secure and resilient against vulnerabilities. I am also expanding my knowledge in <strong>cloud computing</strong> and containerization with tools like Docker.</p>
-    
-    <p>Currently, I am also exploring emerging fields such as <strong>Artificial Intelligence (AI)</strong> and <strong>Robotics</strong>. I enjoy experimenting with machine learning frameworks and understanding how automation and AI-driven solutions can revolutionize business operations. My interest extends to the integration of robotics in industries, focusing on enhancing efficiency through innovative technologies.</p>
-    
-    <p>For data analysis and decision support, I work with tools like <strong>KNIME</strong> and <strong>Google Analytics</strong> to uncover trends, extract insights, and drive strategic decision-making processes.</p>
-    
-    <p>In my free time, I enjoy <strong>developing small software projects</strong> to learn new programming languages, experimenting with AI applications, and contributing to open-source communities. My hobbies also include <strong>gaming</strong> (strategy and simulation games), staying updated on technology trends, and exploring robotics innovations.</p>
-    
-    <p>With a passion for continuous learning and cutting-edge technologies, I strive to bridge the gap between business and IT, delivering efficient and innovative solutions to complex challenges.</p>
-</div>
-
+    <div class="bio">
+        <h1>Zakaria Mowafek 👨‍💻</h1>
+        <p>As a Business Informatics student at FH Frankfurt, I bring a solid combination of software development, system analysis, and business expertise to solve real-world challenges. 💼</p>
+        <p>My technical skillset includes full-stack development with languages and frameworks such as Java, Python, C#, and JavaScript (React, Node.js). I have experience in developing user-friendly applications, implementing object-oriented programming (OOP) concepts, and designing scalable RESTful APIs. 🖥️</p>
+        <p>Beyond software development, I am deeply passionate about cybersecurity and network analysis. Using tools like Kali Linux, Wireshark, and penetration testing techniques, I ensure systems are secure and resilient against vulnerabilities. I am also expanding my knowledge in cloud computing and containerization with tools like Docker. 🛡️</p>
+        <p>Currently, I am also exploring emerging fields such as Artificial Intelligence (AI) and Robotics. I enjoy experimenting with AI applications and understanding how automation and AI-driven solutions can revolutionize business operations. My interest extends to the integration of robotics in industries, focusing on enhancing efficiency through innovative technologies. 🤖</p>
+        <p>For data analysis and decision support, I work with tools like KNIME and Google Analytics to uncover trends, extract insights, and drive strategic decision-making processes. 📊</p>
+        <p>In my free time, I enjoy developing small software projects to learn new programming languages, experimenting with AI applications, and contributing to open-source communities. My hobbies also include gaming (strategy and simulation games), staying updated on technology trends, and exploring robotics innovations. 🎮</p>
+        <p>With a passion for continuous learning and cutting-edge technologies, I strive to bridge the gap between business and IT, delivering efficient and innovative solutions to complex challenges. 💡</p>
+    </div>
 
     <div class="content">
         <div class="section">
-            <div class="section-title">[CONTACT]</div>
+            <div class="section-title">Contact 📞</div>
             <div class="links">
-                <a href="https://github.com/zakmo1337">GitHub <span class="arrow">↗</span></a>
+                <a href="https://github.com/zakmo1337">Github <span class="arrow">↗</span></a>
                 <a href="mailto:Zakaria1337@gmail.com">Mail <span class="arrow">↗</span></a>
                 <a href="https://www.linkedin.com/in/zakaria-mowafek/">LinkedIn <span class="arrow">↗</span></a>
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title">[ITEMS]</div>
+            <div class="section-title">Experience 💼</div>
             <div class="timeline">
                 <div class="timeline-item">
                     <span>snacc-it</span>
-                    <span class="timeline-year">Dez. 2023–Juni 2024</span>
+                    <span class="timeline-year">2023 - 2024</span>
                 </div>
                 <div class="timeline-item">
                     <span>Regionalverkehre Start Deutschland GmbH</span>
-                    <span class="timeline-year">Okt. 2022–Dez. 2022</span>
+                    <span class="timeline-year">2022</span>
                 </div>
                 <div class="timeline-item">
                     <span>K&M IT-SOLUTIONS</span>
-                    <span class="timeline-year">2019-2020</span>
+                    <span class="timeline-year">2019 - 2020</span>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="coming-soon">
-        New portfolio coming soon.
     </div>
 </body>
 </html>
