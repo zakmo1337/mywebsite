@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakaria Mowafek - Portfolio</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-bottom: 2rem;
+        }
+
+        .bio {
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .links a, .timeline-item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+
+        .arrow {
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .timeline-item {
+            justify-content: space-between;
+        }
+
+        .timeline-year {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .coming-soon {
+            margin-top: 4rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Zakaria Mowafek</h1>
+
+    <div class="bio">
+        <p>As a Business Informatics student at FH Frankfurt, I bring a unique blend of technical expertise and business acumen. With hands-on experience in full-stack development, cybersecurity, and system analysis, I specialize in creating secure, efficient solutions for complex business challenges. My proficiency spans multiple technologies including React, Python, and Java, complemented by practical experience in network security using tools like Kali Linux and Wireshark.</p>
+        <p>Currently focused on innovative software development and cybersecurity solutions, combining academic knowledge with real-world application development experience.</p>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <div class="section-title">[CONTACT]</div>
+            <div class="links">
+                <a href="https://github.com/zakmo1337">GitHub <span class="arrow">↗</span></a>
+                <a href="mailto:Zakaria1337@gmail.com">Mail <span class="arrow">↗</span></a>
+                <a href="https://www.linkedin.com/in/zakaria-mowafek/">LinkedIn <span class="arrow">↗</span></a>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">[ITEMS]</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span>snacc-it</span>
+                    <span class="timeline-year">Dez. 2023–Juni 2024</span>
+                </div>
+                <div class="timeline-item">
+                    <span>Regionalverkehre Start Deutschland GmbH</span>
+                    <span class="timeline-year">Okt. 2022–Dez. 2022</span>
+                </div>
+                <div class="timeline-item">
+                    <span>K&M IT-SOLUTIONS</span>
+                    <span class="timeline-year">2019-2020</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="coming-soon">
+        New portfolio coming soon.
+    </div>
+</body>
+</html>
