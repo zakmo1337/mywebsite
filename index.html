@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zakaria Mowafek - Portfolio 🚀</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Default Light Mode */
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
@@ -15,10 +13,8 @@
             margin: 50px auto;
             padding: 0 20px;
             color: #333;
-            background-color: #fff;
             display: flex;
             flex-direction: column;
-            transition: background-color 0.3s, color 0.3s;
         }
 
         h1 {
@@ -28,13 +24,17 @@
             text-align: center;
         }
 
+        .audio-message {
+            margin-bottom: 2rem; /* Platz zwischen Audio und Text */
+            text-align: center;
+        }
+
         .sections-nav {
             display: flex;
             justify-content: space-between;
             margin-bottom: 2rem;
             border-bottom: 1px solid #eee;
             padding-bottom: 1rem;
-            align-items: center;
         }
 
         .sections-nav a {
@@ -107,55 +107,19 @@
                 margin-bottom: 0.5rem;
             }
         }
-
-        /* Dark Mode */
-        body.dark-mode {
-            background-color: #121212;
-            color: #eaeaea;
-        }
-
-        .sections-nav a.dark-mode {
-            color: #eaeaea;
-        }
-
-        .sections-nav a.dark-mode:hover {
-            color: #76c7f4;
-        }
-
-        .links a.dark-mode, .timeline-item.dark-mode, .project-item.dark-mode {
-            color: #eaeaea;
-        }
-
-        .links a.dark-mode:hover, .timeline-item.dark-mode:hover, .project-item.dark-mode:hover {
-            color: #76c7f4;
-        }
-
-        /* Dark Mode Button */
-        .dark-mode-button {
-            background-color: #2e86de;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            color: white;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .dark-mode-button:hover {
-            background-color: #1f6fb2;
-        }
-
-        .dark-mode-button i {
-            margin-right: 8px;
-        }
     </style>
 </head>
 <body>
     <h1>Zakaria Mowafek 👨‍💻</h1>
+
+    <!-- Audio-Player direkt über dem Text -->
+    <div class="audio-message">
+        <h3>Prefer listening? 🎧</h3>
+        <audio controls>
+            <source src="https://voca.ro/18RORU2UN2Aw" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
 
     <div class="sections-nav">
         <a href="#contact">Contact</a>
@@ -216,33 +180,5 @@
         <p>In my free time, I enjoy developing small software projects to learn new programming languages, experimenting with AI applications, and contributing to open-source communities. My hobbies also include gaming (strategy and simulation games), staying updated on technology trends, and exploring robotics innovations. 🎮</p>
         <p>With a passion for continuous learning and cutting-edge technologies, I strive to bridge the gap between business and IT, delivering efficient and innovative solutions to complex challenges. 💡</p>
     </div>
-
-    <button class="dark-mode-button" onclick="toggleDarkMode()">
-        <i class="fas fa-moon"></i> Dark Mode
-    </button>
-
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-            const navLinks = document.querySelectorAll('.sections-nav a');
-            navLinks.forEach(link => link.classList.toggle('dark-mode'));
-            const projectItems = document.querySelectorAll('.project-item');
-            projectItems.forEach(item => item.classList.toggle('dark-mode'));
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            timelineItems.forEach(item => item.classList.toggle('dark-mode'));
-            const links = document.querySelectorAll('.links a');
-            links.forEach(link => link.classList.toggle('dark-mode'));
-
-            // Change icon based on mode
-            const buttonIcon = document.querySelector('.dark-mode-button i');
-            if (document.body.classList.contains('dark-mode')) {
-                buttonIcon.classList.remove('fa-moon');
-                buttonIcon.classList.add('fa-sun');
-            } else {
-                buttonIcon.classList.remove('fa-sun');
-                buttonIcon.classList.add('fa-moon');
-            }
-        }
-    </script>
 </body>
 </html>
