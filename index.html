@@ -24,11 +24,6 @@
             text-align: center;
         }
 
-        .audio-message {
-            margin-bottom: 2rem; /* Platz zwischen Audio und Text */
-            text-align: center;
-        }
-
         .sections-nav {
             display: flex;
             justify-content: space-between;
@@ -95,6 +90,45 @@
             margin-bottom: 1.5rem;
         }
 
+        .audio-message {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .audio-player {
+            margin-top: 1rem;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        body.dark-mode .sections-nav a,
+        body.dark-mode .timeline-item,
+        body.dark-mode .project-item,
+        body.dark-mode .links a {
+            color: white;
+        }
+
+        body.dark-mode .sections-nav a:hover,
+        body.dark-mode .links a:hover {
+            color: #2e86de;
+        }
+
+        /* Dark Mode button */
+        .dark-mode-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .content {
                 grid-template-columns: 1fr;
@@ -110,17 +144,9 @@
     </style>
 </head>
 <body>
+    <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙</button>
+    
     <h1>Zakaria Mowafek 👨‍💻</h1>
-
-    <!-- Audio-Player mit eingebettetem iframe -->
-    <div class="audio-message">
-        <h3>Prefer listening? 🎧</h3>
-        <div>
-            <iframe width="300" height="60" src="https://vocaroo.com/embed/18RORU2UN2Aw?autoplay=0" frameborder="0" allow="autoplay"></iframe>
-            <br>
-            <a href="https://voca.ro/18RORU2UN2Aw" title="Vocaroo-Sprachaufzeichnung" target="_blank">Auf Vocaroo anschauen &gt;&gt;</a>
-        </div>
-    </div>
 
     <div class="sections-nav">
         <a href="#contact">Contact</a>
@@ -171,7 +197,16 @@
             </div>
         </div>
     </div>
-
+  <!-- Audio Player Section -->
+    <div class="audio-message">
+        <h3>Prefer listening? 🎧</h3>
+        <div class="audio-player">
+            <audio controls>
+                <source src="https://github.com/zakmo1337/info/raw/refs/heads/main/11063281-86ed-462b-b2d4-84f74a52410a.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
     <div class="bio">
         <p>As a Business Informatics student at FH Frankfurt, I bring a solid combination of software development, system analysis, and business expertise to solve real-world challenges. 💼</p>
         <p>My technical skillset includes full-stack development with languages and frameworks such as Java, Python, C#, and JavaScript (React, Node.js). I have experience in developing user-friendly applications, implementing object-oriented programming (OOP) concepts, and designing scalable RESTful APIs. 🖥️</p>
@@ -181,5 +216,13 @@
         <p>In my free time, I enjoy developing small software projects to learn new programming languages, experimenting with AI applications, and contributing to open-source communities. My hobbies also include gaming (strategy and simulation games), staying updated on technology trends, and exploring robotics innovations. 🎮</p>
         <p>With a passion for continuous learning and cutting-edge technologies, I strive to bridge the gap between business and IT, delivering efficient and innovative solutions to complex challenges. 💡</p>
     </div>
+
+  
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
 </html>
