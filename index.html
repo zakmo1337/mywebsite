@@ -3,218 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zakaria Mowafek - Portfolio 🚀</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Zakaria Mowafek - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Poppins', sans-serif;
+        :root {
+            --primary: #2563eb;
+            --bg-light: #ffffff;
+            --text-light: #1f2937;
+            --bg-dark: #000000;
+            --text-dark: #ffffff;
+            --accent-light: #dbeafe;
+            --accent-dark: #1e40af;
+            --card-dark: #0a0a0a;
+            --hover-dark: #1a1a1a;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.8;
-            color: #333;
-            background: linear-gradient(to right, #e6e9f0, #eef1f5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-sizing: border-box;
         }
 
-        h1, h2 {
-            text-align: center;
-            margin-top: 20px;
-            color: #2c3e50;
-        }
-
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 1.8rem; margin-bottom: 10px; }
-
-        a {
-            text-decoration: none;
-            color: #2980b9;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #3498db;
-            text-decoration: underline;
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            transition: all 0.3s ease;
+            background: var(--bg-light);
+            color: var(--text-light);
         }
 
         .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 20px auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-light) 0%, transparent 100%);
+            border-radius: 0 0 2rem 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
         }
 
         .section {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            padding: 20px 30px;
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
         .section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
         }
 
         .section-title {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
+            font-size: 1.5rem;
             font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
         }
 
-        .links a {
-            display: inline-block;
-            margin: 5px 10px 0 0;
-            padding: 8px 12px;
-            background-color: #f0f4f8;
-            border-radius: 5px;
-            color: #2980b9;
-            transition: background 0.3s ease, color 0.3s ease;
+        .links a, .timeline-item, .project-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: var(--text-light);
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            background: var(--accent-light);
+            transition: all 0.3s ease;
         }
 
-        .links a:hover {
-            background-color: #3498db;
+        .links a:hover, .timeline-item:hover, .project-item:hover {
+            background: var(--primary);
             color: white;
+        }
+
+        .bio {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin: 4rem 0;
         }
 
         .bio p {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
-        .timeline-item, .project-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        /* Audio Section */
-        .audio-message {
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .audio-section {
             text-align: center;
-            margin-top: 20px;
+            padding: 2rem;
+            background: var(--accent-light);
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        .audio-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
         }
 
         audio {
-            margin-top: 10px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 1rem;
         }
 
-        /* Dark Mode */
-        .dark-mode-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #2980b9;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease;
+        body.dark {
+            --bg-light: var(--bg-dark);
+            --text-light: var(--text-dark);
+            --accent-light: var(--card-dark);
         }
 
-        .dark-mode-btn:hover {
-            background: #1f618d;
+        /* Neue Dark Mode Anpassungen für Schriftfarben */
+        body.dark h1 {
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        body.dark-mode {
-            background: #2c3e50;
-            color: #ecf0f1;
-        }
-
-        body.dark-mode .section {
-            background: #34495e;
+        body.dark .section-title {
             color: white;
         }
 
-        body.dark-mode .links a {
-            background: #2c3e50;
-            color: #ecf0f1;
-        }
-
-        body.dark-mode .links a:hover {
-            background: #2980b9;
+        body.dark header p {
             color: white;
         }
 
-        /* Responsive */
+        body.dark nav a {
+            color: white;
+        }
+
+        body.dark .audio-section h3 {
+            color: white;
+        }
+
+        body.dark .links a, 
+        body.dark .timeline-item, 
+        body.dark .project-item {
+            color: white;
+        }
+
+        body.dark header {
+            background: linear-gradient(135deg, var(--card-dark) 0%, transparent 100%);
+        }
+
+        body.dark .section,
+        body.dark .bio,
+        body.dark nav {
+            background: var(--card-dark);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark .links a:hover, 
+        body.dark .timeline-item:hover, 
+        body.dark .project-item:hover {
+            background: var(--hover-dark);
+        }
+
+        body.dark .audio-section {
+            background: var(--card-dark);
+        }
+
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 0 10px; }
+            .container {
+                padding: 1rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-
-    <h1>Zakaria Mowafek 👨‍💻</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    
+    <header>
+        <h1>Zakaria Mowafek</h1>
+        <p>Business Informatics Student & Developer</p>
+    </header>
 
     <div class="container">
-        <!-- Contact Section -->
-        <div class="section" id="contact">
-            <div class="section-title">Contact 📞</div>
-            <div class="links">
-                <a href="https://github.com/zakmo1337">Github</a>
-                <a href="mailto:Zakaria1337@gmail.com">Mail</a>
-                <a href="https://www.linkedin.com/in/zakaria-mowafek/">LinkedIn</a>
+        <nav>
+            <a href="#contact">Contact</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+        </nav>
+
+        <div class="grid">
+            <div class="section" id="contact">
+                <div class="section-title">Contact 📞</div>
+                <div class="links">
+                    <a href="https://github.com/zakmo1337">Github <span>→</span></a>
+                    <a href="mailto:Zakaria1337@gmail.com">Mail <span>→</span></a>
+                    <a href="https://www.linkedin.com/in/zakaria-mowafek/">LinkedIn <span>→</span></a>
+                </div>
+            </div>
+
+            <div class="section" id="experience">
+                <div class="section-title">Experience 💼</div>
+                <div class="timeline">
+                    <div class="timeline-item">snacc-it <span>→</span></div>
+                    <div class="timeline-item">Regionalverkehre Start Deutschland GmbH <span>→</span></div>
+                    <div class="timeline-item">K&M IT-SOLUTIONS <span>→</span></div>
+                </div>
+            </div>
+
+            <div class="section" id="projects">
+                <div class="section-title">Projects 🚀</div>
+                <div class="projects">
+                    <div class="project-item">Battleships <span>→</span></div>
+                    <div class="project-item">Wetter_App <span>→</span></div>
+                    <div class="project-item">Kalenderanwendung <span>→</span></div>
+                    <div class="project-item">CyberScope <span>→</span></div>
+                </div>
             </div>
         </div>
 
-        <!-- Experience Section -->
-        <div class="section" id="experience">
-            <div class="section-title">Experience 💼</div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span>snacc-it</span>
-                    <span>2023 - 2024</span>
-                </div>
-                <div class="timeline-item">
-                    <span>Regionalverkehre Start Deutschland GmbH</span>
-                    <span>2022</span>
-                </div>
-                <div class="timeline-item">
-                    <span>K&M IT-SOLUTIONS</span>
-                    <span>2019</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Projects Section -->
-        <div class="section" id="projects">
-            <div class="section-title">Projects 🚀</div>
-            <div class="projects">
-                <div class="project-item"><span>Battleships</span></div>
-                <div class="project-item"><span>Wetter_App</span></div>
-                <div class="project-item"><span>Kalenderanwendung</span></div>
-                <div class="project-item"><span>CyberScope</span></div>
-            </div>
-        </div>
-
-        <!-- Bio Section -->
-        <div class="section bio">
-            <div class="section-title">About Me 🧑‍🎓</div>
-            <p>I'm a Business Informatics student at FH Frankfurt with experience in software engineering, cybersecurity, and data analysis. My passion lies in developing innovative solutions using technologies like JavaScript, React, Python, and tools like KNIME.</p>
-        </div>
-
-        <!-- Audio Section -->
-        <div class="audio-message">
-            <h2>Prefer listening? 🎧</h2>
+        <div class="audio-section">
+            <h3>Prefer listening? 🎧</h3>
             <audio controls>
                 <source src="https://github.com/zakmo1337/info/raw/refs/heads/main/11063281-86ed-462b-b2d4-84f74a52410a.wav" type="audio/wav">
                 Your browser does not support the audio element.
             </audio>
         </div>
+
+        <div class="bio">
+            <p>As a Business Informatics student at FH Frankfurt, I bring a solid combination of software development, system analysis, and business expertise to solve real-world challenges. 💼</p>
+            <p>My technical skillset includes full-stack development with languages and frameworks such as Java, Python, C#, and JavaScript (React, Node.js). I have experience in developing user-friendly applications, implementing object-oriented programming (OOP) concepts, and designing scalable RESTful APIs. 🖥️</p>
+            <p>Beyond software development, I am deeply passionate about cybersecurity and network analysis. Using tools like Kali Linux, Wireshark, and penetration testing techniques, I ensure systems are secure and resilient against vulnerabilities. I am also expanding my knowledge in cloud computing and containerization with tools like Docker. 🛡️</p>
+            <p>Currently, I am also exploring emerging fields such as Artificial Intelligence (AI) and Robotics. I enjoy experimenting with AI applications and understanding how automation and AI-driven solutions can revolutionize business operations. My interest extends to the integration of robotics in industries, focusing on enhancing efficiency through innovative technologies. 🤖</p>
+            <p>For data analysis and decision support, I work with tools like KNIME and Google Analytics to uncover trends, extract insights, and drive strategic decision-making processes. 📊</p>
+            <p>In my free time, I enjoy developing small software projects to learn new programming languages, experimenting with AI applications, and contributing to open-source communities. My hobbies also include gaming (strategy and simulation games), staying updated on technology trends, and exploring robotics innovations. 🎮</p>
+            <p>With a passion for continuous learning and cutting-edge technologies, I strive to bridge the gap between business and IT, delivering efficient and innovative solutions to complex challenges. 💡</p>
+        </div>
     </div>
 
     <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
         }
     </script>
 </body>
